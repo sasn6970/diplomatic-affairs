@@ -128,7 +128,9 @@ INNER JOIN countrylanguage AS lang
 GROUP BY country
 ORDER BY life_expectancy DESC;
 
-/* This next query will show the 10 most populated capitals in the world by descending order. */
+/* This next query be useful for an analyst to visualize which are the 10 most populated capitals from the total cities in the world. Since this kind of queries are
+intended to gain insights on the most prevalent returned values, it is convenient to set the arrange by descending order and to limit how many output values we 
+receive. */
 
 SELECT 
 	city.name AS Capital,
@@ -141,7 +143,9 @@ INNER JOIN city
 ORDER BY capitals_pop DESC
 LIMIT 10;
 
--- India and Pakistan have a lot of shared history, this next querie shows if that reflects on any shared languages.
+/* However important general information may be, SQL queries allow analysts to dig deeper into particular relationships. For example, the following query will explore
+the linguistic consecuences of the shared story between India and Pakistan and will return any shared languages by both countries. Queries like this one may come in 
+handy when the focus is set on a region, rather than a country. */
 
 SELECT 
 	country.Name AS country,
